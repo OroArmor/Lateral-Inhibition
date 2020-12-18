@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Lateral Inhibition</title>
+	<link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+	<div class="header">
+		<h1>Lateral Inhibition</h1>
+		<ul id="header-list"><a href="#what">
+				<li>What is Lateral Inhibition?</li>
+			</a><a href="#how">
+				<li>How Exactly does Lateral Inhibition Work?</li>
+			</a><a href="#example">
+				<li>Lateral Inhibition Example</li>
+			</a><a href="#reverse-example">
+				<li>Reversing Lateral Inhibition Simulation</li>
+			</a><a href="#applications">
+				<li>Applications in Image Processing</li>
+			</a>
+			<a href="#enhancement">
+				<li>Lateral Inhibition Enhancement</li>
+			</a></ul>
+	</div>
+	<div id="what">
+		<h2>What is Lateral Inhibition?</h2>
+		<div class="content">
+			<div class="col-30"><img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Bandes_de_mach.PNG" /></div>
+			<div class="col-70">
+				<p>Look at the image on the left. What do you notice? Where the two bands meet, it seems that the darker one gets slightly darker, while the lighter gets slightly brighter. This effect is an optical illusion called <em>Mach bands</em>. This is caused by the neurons in your eye "inhibiting" the neurons around it. Neurons will receive the same amount of light, and all have the same action potential. However, they also receive a small amount of input from their neighbors, causing the neurons in a lighter color that are closer to the darker color to receive both small and large lateral inputs from their neighbors, as the neurons activated by the darker color have a smaller action potential than the lighter color. From these inputs, the total action potential of the cell is reduced, so when there is less lateral input, the action potential of the cell is raised. For the darker color neurons next to the lighter color, the same process takes place, but the lateral input is higher, causing the action potential to be lowered.</p>
+			</div>
+		</div>
+	</div>
+	<div id="how">
+		<h2>How Exactly does Lateral Inhibition Work?</h2>
+		<div class="content">
+			<div class="col-70">
+				<p>The retina cell structure is a complicated web of photoreceptor, horizontal, bipolar, amacrine, and ganglion cells. Fortunately, each type of cell forms a sort of layer, all with a common purpose in this structure.</p>
+				<p>Using the diagram to the left, the start of the visual system is the photoreceptor cells, like rods and cones. When photons hit these cells, electrically charged chemicals like rhodopsin are created, which have the effect of raising the action potential in the cell. The more photons that hit the cell will create more of the chemicals, creating a higher action potential.</p>
+				<p>There are two cell layers that transmit the information from the photoreceptor cells into the optic nerve, the bipolar and ganglion cells. Bipolar cells take inputs from the photoreceptor cells and occasionally the horizontal cells. These inputs are then output into the ganglion cells directly, or sometimes indirectly through a proxy of amacrine cells. The ganglion cells receive inputs from both bipolar and amacrine cells, and the axons of these cells make up the complex optic nerves. The ganglion cells transmit both image and non-image forming information to the brain for more optical processing.</p>
+				<p>Two layers of cells are the main driving force between lateral inhibition. The first layer comes between the photoreceptor cells and the bipolar cell, and it is made from horizontal cells. The main role for horizontal cells is the inhibition of glutamate release from adjacent photoreceptor cells. When a horizontal cell is activated by a photoreceptor cell through the released glutamate, the cell is depolarized, which causes it to hyperpolarize other nearby cells. Because glutamate is an excitatory neurotransmitter, and excitatory synapses are depolarized, the hyperpolarization of the photoreceptor causes less glutamate to be released causing the apparent action potential to be diminished. The second layer is made up of amacrine cells (not pictured in the diagram), and comes between the bipolar cells and the ganglion cells. Amacrine cells come in over 30 different types, but they all modify the output of the bipolar cells into the ganglion cells. Most amacrine cells are inhibitory, releasing GABA or glycine. While their whole function is not known, it is hypothesized that amacrine cells provide other functions such as direction detection.</p>
+			</div>
+			<div class="col-30">
+				<img
+					src="https://images.squarespace-cdn.com/content/v1/5a96f42d5b409bfd5be103ca/1556761880939-L2QHCSCOXLUIR4VRIPJN/ke17ZwdGBToddI8pDm48kF7cpMeZtGAjP8aa3TVNuUhZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVEE4_30_KbVTpZGlCWpRyAXySAhKrrPwvUZDR9QPw80NHIVNCw-XjVlFXd7WYnQR50/retina+lateral+inhibition+visual+system?format=750w" />
+			</div>
+		</div>
+	</div>
+	<div id="example">
+		<h2>Lateral Inhibition Example</h2>
+		<div class="content">
+			<div class="col-30"><iframe src="./sketches/foward/foward.html" class="sketch"> </iframe></div>
+			<div class="col-70">
+				<p>This is an example of how lateral inhibition works. The inputs range from 0 to 100 and then are processed through an algorithm that subtracts 20% from the input from the cells on the left and right, imitating lateral inhibition. If the cell is on the edge, it subtracts 20% of its input, acting as if there is another cell that has the same input on the edge. The lines demonstrate the input as a 2D graph, with the height being the brightness for the cell. The input cells, rectangles with a grey color can be hovered over, and when the mouse is press, dragging up and down will change the value. When you adjust, notice how the cells adjacent to the one you are modifying get brighter as you decrease the input on your cell and darker as you increase. Once again, the graph follows the apparent brightness that your brain receives. When looking at the default state of the simulation, notice how the input consists of two constant brightness values, and how the output has four. Also notice that the bright cell next to the darker cell is brighter than the other two bright cells, and similarly with the dark cell next to the bright cells being darker than the other dark cells. This is a simplified version of the <em>Mach bands</em> illusion showed above. One shortfall of this simulation is that cells are only impacted by their neighbors, and only once, acting as just the photoreceptors and horizontal cells. The additional layer of complexity that the bipolar, amacrine, and ganglion cells introduce is not simulated.</p>
+			</div>
+		</div>
+	</div>
+	<div id="reverse-example">
+		<h2>Reversing Lateral Inhibition Simulation</h2>
+		<div class="content">
+			<div class="col-70">
+				<p>This simulation allows you to take a desired output and to show what the input for it should be. This can be useful in creating situations where low contrast is wanted, in a way removing the effects of lateral inhibition. This simulation works exactly the same as the other example. However, you may notice that certain desired inputs are not possible as they require above 100% or below 0% input. You can take the calculated input from this simulation and put it into the previous simulation, and have your desired output be the same. Because of the simplicity of this example, the way that the values are calculated is only a solution to a system of 6 linear equations. By generalizing the input and the output, a matrix was able to be created, which was then multiplied by the desired output to create the inputs. More complicated situations like cells being impacted by more than one cell away and more than 6 inputs are theoretically possible, but require extremely complex mathematical solutions. Once again, the shortfall of this simulation is its simplicity, acting as if the only cells in the retina that create the effects of lateral inhibition are the photoreceptors and horizontal cells, ignoring the important complexity added by the other 3 layers of cells.</p>
+			</div>
+			<div class="col-30"><iframe src="./sketches/reverse/reverse.html" class="sketch"> </iframe></div>
+		</div>
+	</div>
+	<div id="applications">
+		<h2>Applications in Image Processing</h2>
+		<div class="content">
+			<div class="col-30" style="background-color:white; padding-top: 5px;"><img src="https://ai.stanford.edu/~syyeung/cvweb/Pictures1/sharpening2.png"> </img></div>
+			<div class="col-70" style="padding-left:15px;">
+				<p>The main feature that lateral inhibition causes is increased contrast between different amounts of light. Image processing can use this concept to help improve certain parts of image quality. One example is a "sharpen" filter, which increases contrast between sections of the image that have changes in brightness. Looking at the image to the left, there is a 2D example of lateral inhibition, where the original image is added to a processed version of the image where the nearby pixels (neurons) have been subtracted from a central neuron. These two parts are then added to create the processed image that is sharper, as the lines between different brightness sections of the image have higher contrast. The concepts of lateral inhibition have also been brought into AI image recognition, as lateral inhibition can help detect lines and increase contrast, helping the more complex image recognition patterns have clearer images, similar to how the amacrine cells can help with visual processing like direction detection.</p>
+			</div>
+		</div>
+	</div>
+	<div id="enhancement">
+		<h2>Lateral Inhibition Enhancement</h2>
+		<div class="content">
+			<div class="col-70">
+				<p>A study, <em>Contrast Sensitivity and Lateral Inhibition Are Enhanced With Macular Carotenoid Supplementation</em> in 2015 was conducted to see how macular carotenoids affect the processes in lateral inhibition and contrast sensitivity. It has been previously known that these macular carotenoids enhance visual performance overall, however the effect to lateral inhibition was not well known. The study took around a year to complete, and the subjects were 59 young adults aged 18 to 25. Ten of the participants were given a placebo, 24 were given 12mg of macular carotenoids, and 25 were given 24mg.</p>
+				<p>In order to test a change in contrast sensitivity, a threshold for detection of a Gabor patch (pictured left) was recorded. Participants were then asked a question to determine if they noticed a change in the contrast. The value for contrast was Michelson contrast which is the maximum luminance minus the minimum luminance divided by the sum of the two. During the test, the contrast was maxed out, and was reduced 27% for every correct response, and incorrect answers had the contrast increased by 21%. On average, 25 total contrasts were shown to participants, resulting in an average of over five reversals (an decrease to increase or vice versa), and the participant's contrast level was the average for the last three reversals that took place. This test was then repeated a second time after the participant had a one-minute break, and the two values for each test were averaged for the final contrast sensitivity in the participant.</p>
+				<p>The results of this study show a clear correlation with the consumption of macular carotenoids and improved contrast sensitivity. As expected, there was little change in the sensitivity for the placebo participants. The macular carotenoids lead to an increase of MPOD (macular pigment optical density), which was strongly correlated to a larger percent increase in contrast sensitivity over the initial testing. For all the placebo results, no participants had an increase over 0.6%, while both the 12 and 24mg participants had maximum increases of around 1.5%. The researchers concluded that the increase in contrast sensitivity could not be purely explained by changes to the structure of the eye, and therefore had to be a combination with changes in the neurophysiology of the retina.</p>
+				<p>While the results of this study show minimal improvement of contrast sensitivity, the conclusion that the neurophysiology of the retina can be modified by some drugs show that future generations could, through extensive testing, have extremely sensitive eyesight, and majorly increased contrast sensitivity. While not knowing what the future holds, this improved sensitivity could lead to better soldiers who are able to more easily notice slight contrast changes in the environment, or pilots that can follow enemy planes with better accuracy in poor conditions like clouds or as they pass near to the sun. The applications might extend outside of military uses, for forensic scientists looking for slight changes in the crime scene, to professional video gamers who can notice their opponents with ease. The possibilities could be endless on how human biology is improved, which raise ethical questions outside the scope of this review.</p>
+			</div>
+			<div class="col-30">
+				<img src="https://th.bing.com/th/id/OIP.LnL_sDJpgEQL5IT2NEPpgQHaFj?pid=Api&w=672&h=504&rs=1">
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div id="footer-content-wrapper">
+			<div class="footer-content" id="sources">
+				<h2>Sources</h2>
+				<ul>
+					<li><a href="https://brainstuff.org/blog/how-does-lateral-inhibition-in-the-visual-system-work">How does lateral inhibition in the visual system work?</a></li>
+					<li><a href="https://en.wikipedia.org/wiki/Lateral_inhibition">Lateral inhibition</a></li>
+					<li><a href="https://en.wikipedia.org/wiki/Retinal_ganglion_cell">Retinal ganglion cell</a></li>
+					<li><a href="https://en.wikipedia.org/wiki/Retina_bipolar_cell">Retina bipolar cell</a></li>
+					<li><a href="https://quantumhealth.com/storage/app/media/uploaded-files/Stringham%20et%20al.%202017%20contrast%20sensitivity.pdf">Contrast Sensitivity and Lateral Inhibition Are Enhanced With Macular Carotenoid Supplementation</a></li>
+				</ul>
+			</div>
+			<div class="footer-content" id="contact">
+				<h2>Contact</h2>
+				<ul>
+					<li>Email: <a href="mailto:eliorona@uw.edu?subject=Lateral Inhibition Webpage">eliorona@uw.edu</a></li>
+					<li>LinkedIn: <a href="https://www.linkedin.com/in/eli-orona-b8893a183/">Eli Orona</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="copy">&copy;2020 Eli Orona</div>
+	</div>
+</body>
+
+</html>

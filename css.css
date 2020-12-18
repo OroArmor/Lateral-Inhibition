@@ -1,0 +1,115 @@
+.sketch {
+  width: 400px;
+  height: 400px;
+  border: 1px solid white;
+}
+
+
+body {
+  background-color: #161616;
+  color: white;
+  margin: 0;
+}
+h1, h2 {
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  text-align: center;
+  margin: 15px;
+}
+
+.col-30 {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.col-70 {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+p {
+  font-size: 1.3em;
+  text-align: left;
+}
+
+img {
+  width: 96%;
+}
+
+#header-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+}
+
+.header {
+  background-color: #101010;
+  padding-top: .67em;
+}
+
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+a {
+  color: white;
+}
+
+#header-list a:hover{
+  background-color: #222222;
+}
+
+#header-list a {
+  padding: 10px;
+  display: block;
+  text-align: center;
+  width: 100%;
+  text-decoration: none;
+}
+
+p {
+  tab-size: 8;
+}
+
+p:first-child{
+  margin-top: 0;
+}
+
+.footer {
+  width: 100%;
+  background-color: #101010;
+  margin-top: 1em;
+}
+
+.footer-content {
+  padding: 10px;
+  text-align: center;
+  width: 50%;
+}
+
+.footer-content ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#footer-content-wrapper {
+  display: flex;
+}
+
+#copy {
+  width: 100%;
+  background-color: #080808;
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
